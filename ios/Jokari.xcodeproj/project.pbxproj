@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		860C06231B065AA100F3D7DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C06221B065AA100F3D7DF /* AppDelegate.swift */; };
+		860C06261B065AA100F3D7DF /* Jokari.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 860C06241B065AA100F3D7DF /* Jokari.xcdatamodeld */; };
+		860C06281B065AA100F3D7DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C06271B065AA100F3D7DF /* ViewController.swift */; };
+		860C062B1B065AA100F3D7DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860C06291B065AA100F3D7DF /* Main.storyboard */; };
+		860C062D1B065AA100F3D7DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 860C062C1B065AA100F3D7DF /* Images.xcassets */; };
+		860C06301B065AA100F3D7DF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860C062E1B065AA100F3D7DF /* LaunchScreen.xib */; };
+		860C063C1B065AA100F3D7DF /* JokariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C063B1B065AA100F3D7DF /* JokariTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		860C06361B065AA100F3D7DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 860C06151B065AA000F3D7DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 860C061C1B065AA000F3D7DF;
+			remoteInfo = Jokari;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		860C061D1B065AA100F3D7DF /* Jokari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jokari.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		860C06211B065AA100F3D7DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		860C06221B065AA100F3D7DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		860C06251B065AA100F3D7DF /* Jokari.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jokari.xcdatamodel; sourceTree = "<group>"; };
+		860C06271B065AA100F3D7DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		860C062A1B065AA100F3D7DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		860C062C1B065AA100F3D7DF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		860C062F1B065AA100F3D7DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		860C06351B065AA100F3D7DF /* JokariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JokariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		860C063A1B065AA100F3D7DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		860C063B1B065AA100F3D7DF /* JokariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokariTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		860C061A1B065AA000F3D7DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		860C06321B065AA100F3D7DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		860C06141B065AA000F3D7DF = {
+			isa = PBXGroup;
+			children = (
+				860C061F1B065AA100F3D7DF /* Jokari */,
+				860C06381B065AA100F3D7DF /* JokariTests */,
+				860C061E1B065AA100F3D7DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		860C061E1B065AA100F3D7DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				860C061D1B065AA100F3D7DF /* Jokari.app */,
+				860C06351B065AA100F3D7DF /* JokariTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		860C061F1B065AA100F3D7DF /* Jokari */ = {
+			isa = PBXGroup;
+			children = (
+				860C06221B065AA100F3D7DF /* AppDelegate.swift */,
+				860C06271B065AA100F3D7DF /* ViewController.swift */,
+				860C06291B065AA100F3D7DF /* Main.storyboard */,
+				860C062C1B065AA100F3D7DF /* Images.xcassets */,
+				860C062E1B065AA100F3D7DF /* LaunchScreen.xib */,
+				860C06241B065AA100F3D7DF /* Jokari.xcdatamodeld */,
+				860C06201B065AA100F3D7DF /* Supporting Files */,
+			);
+			path = Jokari;
+			sourceTree = "<group>";
+		};
+		860C06201B065AA100F3D7DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				860C06211B065AA100F3D7DF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		860C06381B065AA100F3D7DF /* JokariTests */ = {
+			isa = PBXGroup;
+			children = (
+				860C063B1B065AA100F3D7DF /* JokariTests.swift */,
+				860C06391B065AA100F3D7DF /* Supporting Files */,
+			);
+			path = JokariTests;
+			sourceTree = "<group>";
+		};
+		860C06391B065AA100F3D7DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				860C063A1B065AA100F3D7DF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		860C061C1B065AA000F3D7DF /* Jokari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 860C063F1B065AA100F3D7DF /* Build configuration list for PBXNativeTarget "Jokari" */;
+			buildPhases = (
+				860C06191B065AA000F3D7DF /* Sources */,
+				860C061A1B065AA000F3D7DF /* Frameworks */,
+				860C061B1B065AA000F3D7DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jokari;
+			productName = Jokari;
+			productReference = 860C061D1B065AA100F3D7DF /* Jokari.app */;
+			productType = "com.apple.product-type.application";
+		};
+		860C06341B065AA100F3D7DF /* JokariTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 860C06421B065AA100F3D7DF /* Build configuration list for PBXNativeTarget "JokariTests" */;
+			buildPhases = (
+				860C06311B065AA100F3D7DF /* Sources */,
+				860C06321B065AA100F3D7DF /* Frameworks */,
+				860C06331B065AA100F3D7DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				860C06371B065AA100F3D7DF /* PBXTargetDependency */,
+			);
+			name = JokariTests;
+			productName = JokariTests;
+			productReference = 860C06351B065AA100F3D7DF /* JokariTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		860C06151B065AA000F3D7DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Matthieu Comperat";
+				TargetAttributes = {
+					860C061C1B065AA000F3D7DF = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					860C06341B065AA100F3D7DF = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 860C061C1B065AA000F3D7DF;
+					};
+				};
+			};
+			buildConfigurationList = 860C06181B065AA000F3D7DF /* Build configuration list for PBXProject "Jokari" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 860C06141B065AA000F3D7DF;
+			productRefGroup = 860C061E1B065AA100F3D7DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				860C061C1B065AA000F3D7DF /* Jokari */,
+				860C06341B065AA100F3D7DF /* JokariTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		860C061B1B065AA000F3D7DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				860C062B1B065AA100F3D7DF /* Main.storyboard in Resources */,
+				860C06301B065AA100F3D7DF /* LaunchScreen.xib in Resources */,
+				860C062D1B065AA100F3D7DF /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		860C06331B065AA100F3D7DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		860C06191B065AA000F3D7DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				860C06281B065AA100F3D7DF /* ViewController.swift in Sources */,
+				860C06231B065AA100F3D7DF /* AppDelegate.swift in Sources */,
+				860C06261B065AA100F3D7DF /* Jokari.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		860C06311B065AA100F3D7DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				860C063C1B065AA100F3D7DF /* JokariTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		860C06371B065AA100F3D7DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 860C061C1B065AA000F3D7DF /* Jokari */;
+			targetProxy = 860C06361B065AA100F3D7DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		860C06291B065AA100F3D7DF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				860C062A1B065AA100F3D7DF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		860C062E1B065AA100F3D7DF /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				860C062F1B065AA100F3D7DF /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		860C063D1B065AA100F3D7DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		860C063E1B065AA100F3D7DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		860C06401B065AA100F3D7DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Jokari/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		860C06411B065AA100F3D7DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Jokari/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		860C06431B065AA100F3D7DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JokariTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jokari.app/Jokari";
+			};
+			name = Debug;
+		};
+		860C06441B065AA100F3D7DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JokariTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jokari.app/Jokari";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		860C06181B065AA000F3D7DF /* Build configuration list for PBXProject "Jokari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860C063D1B065AA100F3D7DF /* Debug */,
+				860C063E1B065AA100F3D7DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		860C063F1B065AA100F3D7DF /* Build configuration list for PBXNativeTarget "Jokari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860C06401B065AA100F3D7DF /* Debug */,
+				860C06411B065AA100F3D7DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		860C06421B065AA100F3D7DF /* Build configuration list for PBXNativeTarget "JokariTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				860C06431B065AA100F3D7DF /* Debug */,
+				860C06441B065AA100F3D7DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		860C06241B065AA100F3D7DF /* Jokari.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				860C06251B065AA100F3D7DF /* Jokari.xcdatamodel */,
+			);
+			currentVersion = 860C06251B065AA100F3D7DF /* Jokari.xcdatamodel */;
+			path = Jokari.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 860C06151B065AA000F3D7DF /* Project object */;
+}
