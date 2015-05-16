@@ -16,12 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B75-an-QJE" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="150" y="114" width="300" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B75-an-QJE" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="160" y="150" width="280" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Vpw-Aa-9Qx"/>
+                                    <constraint firstAttribute="width" constant="280" id="l7V-oO-w7o"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B75-an-QJE" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="150" id="CC3-60-dv1"/>
+                            <constraint firstAttribute="centerX" secondItem="B75-an-QJE" secondAttribute="centerX" id="x9Z-B6-F29"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="FBLoginView" destination="B75-an-QJE" id="MYp-Oc-F7s"/>
