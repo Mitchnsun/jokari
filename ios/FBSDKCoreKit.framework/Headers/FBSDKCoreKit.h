@@ -33,5 +33,8 @@
 #import <FBSDKCoreKit/FBSDKSettings.h>
 #import <FBSDKCoreKit/FBSDKUtility.h>
 
+// Adding by matthieu_comperat to remove a warning (Umbrella header)
+#import <FBSDKCoreKit/FBSDKTestUsersManager.h>
+
 #define FBSDK_VERSION_STRING @"4.1.0"
 #define FBSDK_TARGET_PLATFORM_VERSION @"v2.3"
