@@ -11,25 +11,37 @@ import UIKit
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var FBLoginView: FBSDKLoginButton!
+    @IBOutlet weak var Email: UITextField!
+    @IBOutlet weak var Pseudo: UITextField!
+    @IBOutlet weak var Password: UITextField!
+    @IBOutlet weak var FirstName: UITextField!
+    @IBOutlet weak var LastName: UITextField!
+    @IBOutlet weak var SubmitButton: UIButton!
+    @IBOutlet weak var ProfilePicture: UIImageView!
+    @IBOutlet weak var FBName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        FBLoginView.readPermissions = ["public_profile", "email", "user_friends"]
+        FBLoginView.delegate = self
         
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             // User is already logged in, do work such as go to next view controller.
             
             // Or Show Logout Button
-            FBLoginView.readPermissions = ["public_profile", "email", "user_friends"]
-            FBLoginView.delegate = self
+            FBLoginView.hidden = true
+            ProfilePicture.hidden = false
+            FBName.hidden = false
             self.returnUserData()
         } else {
-            FBLoginView.readPermissions = ["public_profile", "email", "user_friends"]
-            FBLoginView.delegate = self
+            FBLoginView.hidden = false
         }
         
     }
     
-    // Facebook Delegate Methods
+    // MARK: Facebook Delegate Methods
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         println("User Logged In")
@@ -49,19 +61,28 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 // Do work
             }
             
+            FBLoginView.hidden = true
+            ProfilePicture.hidden = false
+            FBName.hidden = false
             self.returnUserData()
         }
         
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        println("User Logged Out")
+        self.Email.text = ""
+        self.FirstName.text = ""
+        self.LastName.text = ""
+        ProfilePicture.hidden = true
+        FBName.hidden = true
     }
     
     func returnUserData()
     {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+        let userRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        let pictureRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me/picture?redirect=false&type=large", parameters: nil)
+        let graphConnection = FBSDKGraphRequestConnection()
+        graphConnection.addRequest(userRequest, completionHandler: { (connection, result, error) -> Void in
             
             if ((error) != nil)
             {
@@ -71,18 +92,41 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             else
             {
                 println("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                println("User Name is: \(userName)")
-                let userEmail : NSString = result.valueForKey("email") as! NSString
-                println("User Email is: \(userEmail)")
+                let FB_Email : String = result.valueForKey("email") as! String
+                self.Email.text = FB_Email
+                let FB_Name : String = result.valueForKey("name") as! String
+                self.FBName.text = FB_Name
+                let FB_FirstName : String = result.valueForKey("first_name") as! String
+                self.FirstName.text = FB_FirstName
+                let FB_LastName : String = result.valueForKey("last_name") as! String
+                self.LastName.text = FB_LastName
             }
         })
+        graphConnection.addRequest(pictureRequest, completionHandler: { (connection, result, error) -> Void in
+
+            if ((error) != nil)
+            {
+                // Process error
+                println("Error: \(error)")
+            }
+            else
+            {
+                let data : NSDictionary = result.valueForKey("data") as! NSDictionary;
+                let UrlProfilPic : String = data.valueForKey("url") as! String
+                let url : NSURL = NSURL(string: UrlProfilPic)!
+                let PicData : NSData = NSData(contentsOfURL: url)!
+                var picture : UIImage = UIImage(data: PicData)!
+                self.ProfilePicture.image = picture
+                println("fetched user: \(data)")
+            }
+        })
+        graphConnection.start()
     }
+    
+    // MARK: UIViewController delegate methods
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
