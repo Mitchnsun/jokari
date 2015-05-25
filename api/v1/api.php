@@ -10,7 +10,7 @@
 	
 	$path = explode('/', $_SERVER['REQUEST_URI']);
 	$target = $path[4];
-	$id = $path[5];
+	$id = isset($path[5]) ? $path[5] : null;
 	
 	if(isset($path[6])){
 		$httpStatus -> error(414);
@@ -20,7 +20,7 @@
 	if(isset($target)){
 		$element = $router -> getClass($target);
 		if(is_object($element)){
-			$element -> initialize($httpStatus, $id);
+			$element -> initialize($id);
 		} else {
 			$httpStatus -> error($element);
 		}

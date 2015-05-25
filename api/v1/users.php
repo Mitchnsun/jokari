@@ -1,22 +1,19 @@
 <?php
+
+	require_once '../HTTPStatus.php';
+	require_once '../connect_DB.php';
 	
-	try { /* DB */
-    require_once ('../connect_DB.php');
-  } catch (Exception $e) {
-    $response = array("status" => 500, "errorCode" => "BD", "message" => $e -> getMessage());
-    echo json_encode($response);
-    die();
-  }
-	
-	class Teams {
+	class Users {
 		private $bdd;
 		private $httpStatus;
 		private $availableMethods = array(
 			"GET" => 100,
 			"DELETE" => 405
 		);
-		public function initialize($httpStatus, $id){
-			$this -> httpStatus = $httpStatus;
+		public function initialize($id){
+			$this -> httpStatus = new HTTPStatus();
+			$this -> bdd = new DataBase();
+			$this -> bdd -> init();
 			$status = $this -> availableMethods[$_SERVER['REQUEST_METHOD']];
 			
 			if($status != 100){
@@ -34,12 +31,25 @@
 		}
 		/*** Private functions ***/
 		private function get($id){
-			echo "It works!";
+			if(isset($id)){
+				$this -> httpStatus -> error(501);
+			} else {
+				$this -> count();
+			}
 		}
 		
 		/**
-		 * Return JSON a list of object or one object if id defined
+		 * Return JSON of number of users or a sepcific user
 		 * GET /users/:id
 		 */
+		 private function count(){
+		  $query = "SELECT COUNT(*) FROM users";
+		 	$req = $this -> bdd -> bdd_users -> query($query);
+			$result = $req -> fetch();
+			$users = array("count" => $result["COUNT(*)"]);
+			
+			// return the JSON
+		  echo json_encode($users);
+		 }
 	}
 ?>
