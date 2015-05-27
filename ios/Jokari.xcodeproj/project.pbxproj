@@ -17,6 +17,9 @@
 		860C06491B065E8A00F3D7DF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860C06461B065E8900F3D7DF /* Bolts.framework */; };
 		860C064A1B065E8A00F3D7DF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860C06471B065E8A00F3D7DF /* FBSDKCoreKit.framework */; };
 		860C064B1B065E8A00F3D7DF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860C06481B065E8A00F3D7DF /* FBSDKLoginKit.framework */; };
+		86EA5E191B1666530031C119 /* JokariApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EA5E181B1666530031C119 /* JokariApi.swift */; };
+		86EA5E291B16677F0031C119 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EA5E221B1667410031C119 /* SwiftHTTP.framework */; };
+		86EA5E2B1B1668CB0031C119 /* SwiftHTTP.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 86EA5E221B1667410031C119 /* SwiftHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +30,49 @@
 			remoteGlobalIDString = 860C061C1B065AA000F3D7DF;
 			remoteInfo = Jokari;
 		};
+		86EA5E211B1667410031C119 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86EA5E1A1B1667410031C119 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BFD901619C8D8B500DD99B6;
+			remoteInfo = SwiftHTTP;
+		};
+		86EA5E231B1667410031C119 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86EA5E1A1B1667410031C119 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6BFD902119C8D8B500DD99B6;
+			remoteInfo = SwiftHTTPTests;
+		};
+		86EA5E251B1667410031C119 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86EA5E1A1B1667410031C119 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D958025919E6EEEB003C8218;
+			remoteInfo = SwiftHTTPOSX;
+		};
+		86EA5E271B1667410031C119 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86EA5E1A1B1667410031C119 /* SwiftHTTP.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D958026319E6EEEB003C8218;
+			remoteInfo = SwiftHTTPOSXTests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		86EA5E2A1B1668BA0031C119 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				86EA5E2B1B1668CB0031C119 /* SwiftHTTP.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		860C061D1B065AA100F3D7DF /* Jokari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jokari.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +90,8 @@
 		860C06471B065E8A00F3D7DF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		860C06481B065E8A00F3D7DF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		860C064C1B065ED400F3D7DF /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		86EA5E181B1666530031C119 /* JokariApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokariApi.swift; sourceTree = "<group>"; };
+		86EA5E1A1B1667410031C119 /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftHTTP.xcodeproj; path = ../SwiftHTTP/SwiftHTTP.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86EA5E291B16677F0031C119 /* SwiftHTTP.framework in Frameworks */,
 				860C06491B065E8A00F3D7DF /* Bolts.framework in Frameworks */,
 				860C064A1B065E8A00F3D7DF /* FBSDKCoreKit.framework in Frameworks */,
 				860C064B1B065E8A00F3D7DF /* FBSDKLoginKit.framework in Frameworks */,
@@ -71,6 +119,7 @@
 		860C06141B065AA000F3D7DF = {
 			isa = PBXGroup;
 			children = (
+				86EA5E1A1B1667410031C119 /* SwiftHTTP.xcodeproj */,
 				860C06451B065E7000F3D7DF /* Frameworks */,
 				860C061F1B065AA100F3D7DF /* Jokari */,
 				860C06381B065AA100F3D7DF /* JokariTests */,
@@ -90,6 +139,7 @@
 		860C061F1B065AA100F3D7DF /* Jokari */ = {
 			isa = PBXGroup;
 			children = (
+				86EA5E181B1666530031C119 /* JokariApi.swift */,
 				860C06221B065AA100F3D7DF /* AppDelegate.swift */,
 				860C06271B065AA100F3D7DF /* ViewController.swift */,
 				860C06291B065AA100F3D7DF /* Main.storyboard */,
@@ -137,6 +187,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		86EA5E1B1B1667410031C119 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86EA5E221B1667410031C119 /* SwiftHTTP.framework */,
+				86EA5E241B1667410031C119 /* SwiftHTTPTests.xctest */,
+				86EA5E261B1667410031C119 /* SwiftHTTP.framework */,
+				86EA5E281B1667410031C119 /* SwiftHTTPOSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +208,7 @@
 				860C06191B065AA000F3D7DF /* Sources */,
 				860C061A1B065AA000F3D7DF /* Frameworks */,
 				860C061B1B065AA000F3D7DF /* Resources */,
+				86EA5E2A1B1668BA0031C119 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +266,12 @@
 			mainGroup = 860C06141B065AA000F3D7DF;
 			productRefGroup = 860C061E1B065AA100F3D7DF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 86EA5E1B1B1667410031C119 /* Products */;
+					ProjectRef = 86EA5E1A1B1667410031C119 /* SwiftHTTP.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				860C061C1B065AA000F3D7DF /* Jokari */,
@@ -211,6 +279,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		86EA5E221B1667410031C119 /* SwiftHTTP.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTP.framework;
+			remoteRef = 86EA5E211B1667410031C119 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		86EA5E241B1667410031C119 /* SwiftHTTPTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftHTTPTests.xctest;
+			remoteRef = 86EA5E231B1667410031C119 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		86EA5E261B1667410031C119 /* SwiftHTTP.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftHTTP.framework;
+			remoteRef = 86EA5E251B1667410031C119 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		86EA5E281B1667410031C119 /* SwiftHTTPOSXTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftHTTPOSXTests.xctest;
+			remoteRef = 86EA5E271B1667410031C119 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		860C061B1B065AA000F3D7DF /* Resources */ = {
@@ -237,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86EA5E191B1666530031C119 /* JokariApi.swift in Sources */,
 				860C06281B065AA100F3D7DF /* ViewController.swift in Sources */,
 				860C06231B065AA100F3D7DF /* AppDelegate.swift in Sources */,
 				860C06261B065AA100F3D7DF /* Jokari.xcdatamodeld in Sources */,
