@@ -21,6 +21,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
   @IBOutlet weak var ProfilePicture: UIImageView!
   @IBOutlet weak var FBName: UILabel!
   
+  var FB_user : NSMutableDictionary = [:]
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -47,7 +49,14 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     self.SubmitButton.enabled = false
     var request = HTTPTask()
     request.baseURL = JokariApi().API_URL
-    let params: Dictionary<String,AnyObject> = ["firstname" : self.FirstName]
+    let params: Dictionary<String,AnyObject> = [
+      "firstname" : self.FirstName.text,
+      "lastname" : self.LastName.text,
+      "email" : self.Email.text,
+      "pseudo" : self.Pseudo.text,
+      "password" : self.Password.text,
+      "FB_user" : self.FB_user
+    ]
     request.POST(JokariApi().USERS, parameters: params, completionHandler: {(response: HTTPResponse) in
       self.SubmitButton.enabled = true
       if let err = response.error {
@@ -112,14 +121,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
       else
       {
         println("fetched user: \(result)")
-        let FB_Email : String = result.valueForKey("email") as! String
-        self.Email.text = FB_Email
-        let FB_Name : String = result.valueForKey("name") as! String
-        self.FBName.text = FB_Name
-        let FB_FirstName : String = result.valueForKey("first_name") as! String
-        self.FirstName.text = FB_FirstName
-        let FB_LastName : String = result.valueForKey("last_name") as! String
-        self.LastName.text = FB_LastName
+        self.FB_user = result.mutableCopy() as! NSMutableDictionary
+        self.Email.text = self.FB_user.valueForKey("email") as! String
+        self.FBName.text = self.FB_user.valueForKey("name") as? String
+        self.FirstName.text = self.FB_user.valueForKey("first_name") as! String
+        self.LastName.text = self.FB_user.valueForKey("last_name") as! String
       }
     })
     graphConnection.addRequest(pictureRequest, completionHandler: { (connection, result, error) -> Void in
@@ -132,8 +138,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
       else
       {
         let data : NSDictionary = result.valueForKey("data") as! NSDictionary;
-        let UrlProfilPic : String = data.valueForKey("url") as! String
-        let url : NSURL = NSURL(string: UrlProfilPic)!
+        let UrlProfilePic : String = data.valueForKey("url") as! String
+        let url : NSURL = NSURL(string: UrlProfilePic)!
+        self.FB_user.setValue(url, forKey: "url_profilepic")
         let PicData : NSData = NSData(contentsOfURL: url)!
         var picture : UIImage = UIImage(data: PicData)!
         self.ProfilePicture.image = picture
