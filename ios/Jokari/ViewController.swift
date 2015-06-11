@@ -20,6 +20,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
   @IBOutlet weak var SubmitButton: UIButton!
   @IBOutlet weak var ProfilePicture: UIImageView!
   @IBOutlet weak var FBName: UILabel!
+  @IBOutlet weak var ErrorLabel: UILabel!
   
   var FB_user : NSMutableDictionary = [:]
   
@@ -35,8 +36,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
       
       // Or Show Logout Button
       FBLoginView.hidden = true
-      ProfilePicture.hidden = false
-      FBName.hidden = false
       self.returnUserData()
     } else {
       FBLoginView.hidden = false
@@ -64,8 +63,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         return //also notify app of failure as needed
       }
       if let data = response.responseObject as? NSData {
-        let str = NSString(data: data, encoding: NSUTF8StringEncoding)
-        println("response: \(str)") //prints the HTML of the page
+        let json = JokariApi().parseJSON(data)
+        let errors = json.valueForKey("errors") as! NSArray
+        self.ErrorLabel.hidden = false;
+        self.ErrorLabel.text = JokariApi().getErrors(errors) as String;
+        println("Errors : \(json)")
       }
     })
   }
@@ -83,16 +85,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
       // Handle cancellations
     }
     else {
-      // If you ask for multiple permissions at once, you
-      // should check if specific permissions missing
-      if result.grantedPermissions.contains("email")
-      {
-        // Do work
-      }
-      
       FBLoginView.hidden = true
-      ProfilePicture.hidden = false
-      FBName.hidden = false
       self.returnUserData()
     }
     
@@ -121,6 +114,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
       else
       {
         println("fetched user: \(result)")
+        self.ProfilePicture.hidden = false
+        self.FBName.hidden = false
         self.FB_user = result.mutableCopy() as! NSMutableDictionary
         self.Email.text = self.FB_user.valueForKey("email") as! String
         self.FBName.text = self.FB_user.valueForKey("name") as? String

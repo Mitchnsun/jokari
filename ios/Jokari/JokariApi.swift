@@ -10,26 +10,31 @@ import Foundation
 
 class JokariApi {
   
+  // MARK: URLS
   // Development
   let API_URL = "http://localhost:8888/jokari/api"
   // Production
   //let API_URL = "http://www.mcomper.at/jokari/api"
-  
-  // API Data
+
   internal let USERS = "/v1/users"
   
-  private func formatURL(data: String) -> String{
-    var url : String = self.API_URL + data
-    return url
+  // MARK: Datas
+  func parseJSON(data: NSData) -> NSDictionary {
+    var jsonError = NSError?()
+    let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as! NSDictionary
+    
+    if let unwrappedError = jsonError {
+      println("json error: \(unwrappedError)")
+    }
+    return json
   }
   
-  func getRequest(httpMethod: String, data: String) -> NSMutableURLRequest{
-    var request : NSMutableURLRequest = NSMutableURLRequest()
-    request.URL = NSURL(string: self.formatURL(data))
-    request.HTTPMethod = httpMethod
+  func getErrors(errors: NSArray) -> String {
+    var labelErrors = ""
+    for err in errors {
+      labelErrors += err as! String + " "
+    }
     
-    println("Request \(request.HTTPMethod)")
-    
-    return request
+    return labelErrors
   }
 }

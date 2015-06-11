@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -75,16 +76,28 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egx-P8-WQW">
+                                <rect key="frame" x="40" y="515" width="520" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Q18-do-bXy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6vH-8W-F67" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="40" id="0fE-XR-08b"/>
                             <constraint firstItem="5n3-G3-wrk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="40" id="5kS-zU-4Oj"/>
                             <constraint firstAttribute="trailing" secondItem="hmw-oJ-HTg" secondAttribute="trailing" constant="40" id="Axp-i3-PhX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Egx-P8-WQW" secondAttribute="trailing" constant="24" id="GVq-oH-VQE"/>
+                            <constraint firstItem="Egx-P8-WQW" firstAttribute="top" secondItem="fOS-4Z-VU8" secondAttribute="bottom" constant="25" id="IzI-F2-vAw"/>
                             <constraint firstItem="B75-an-QJE" firstAttribute="height" secondItem="fOS-4Z-VU8" secondAttribute="height" id="JQD-Yi-wDN"/>
                             <constraint firstItem="DMK-eJ-DJP" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="46" id="Jpd-Eq-Kkc"/>
                             <constraint firstItem="DMK-eJ-DJP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="40" id="Kgy-h5-4J5"/>
                             <constraint firstItem="kti-bg-zfX" firstAttribute="width" secondItem="2yo-rV-2lU" secondAttribute="width" id="OVc-Ql-hfK"/>
+                            <constraint firstItem="Egx-P8-WQW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="QhB-mE-iFE"/>
                             <constraint firstItem="hmw-oJ-HTg" firstAttribute="width" secondItem="6vH-8W-F67" secondAttribute="width" id="QxU-6X-mzl"/>
                             <constraint firstItem="kti-bg-zfX" firstAttribute="top" secondItem="5n3-G3-wrk" secondAttribute="bottom" constant="20" id="TfL-0V-nJa"/>
                             <constraint firstItem="fOS-4Z-VU8" firstAttribute="width" secondItem="B75-an-QJE" secondAttribute="width" id="Y51-yr-M9W"/>
@@ -108,6 +121,7 @@
                     </view>
                     <connections>
                         <outlet property="Email" destination="hmw-oJ-HTg" id="9QA-6x-ewG"/>
+                        <outlet property="ErrorLabel" destination="Egx-P8-WQW" id="J5U-NQ-NsV"/>
                         <outlet property="FBLoginView" destination="B75-an-QJE" id="MYp-Oc-F7s"/>
                         <outlet property="FBName" destination="tHl-nf-VnH" id="eLy-hK-3We"/>
                         <outlet property="FirstName" destination="2yo-rV-2lU" id="8ki-fO-oVF"/>
